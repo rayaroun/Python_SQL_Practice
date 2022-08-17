@@ -23,7 +23,6 @@ class Solution:
         return list(dic.values())
 
 
-
 root = TreeNode(6)
 root.left = TreeNode(2)
 root.right = TreeNode(6)
