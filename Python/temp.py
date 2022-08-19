@@ -82,7 +82,17 @@
 
 
 
-st = ""
-st+="abc"
+# st = ""
+# st+="abc"
 
-print(st+"xyz")
+# print(st+"xyz")
+
+
+
+ls = [1,2,3,4,5]
+
+test0 = True if ls[:0] else False
+
+test1 = True if ls[len(ls):] else False
+
+print(test0, test1)
