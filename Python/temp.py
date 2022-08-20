@@ -89,10 +89,24 @@
 
 
 
-ls = [1,2,3,4,5]
+# ls = [1,2,3,4,5]
 
-test0 = True if ls[:0] else False
+# test0 = True if ls[:0] else False
 
-test1 = True if ls[len(ls):] else False
+# test1 = True if ls[len(ls):] else False
 
-print(test0, test1)
+# print(test0, test1)
+
+
+
+# a = "a"
+
+# k = 1
+
+# print(chr(ord(a)+k))
+
+
+x = 99
+
+
+print(chr(ord(chr(x))))
