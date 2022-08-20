@@ -22,10 +22,10 @@ class Solution:
                 val = ord(ls[it])+k
                 
                 if val > 122:
-                    temp = 97 + (val - 122)
+                    temp = 96 + (val - 122)
                     ls[it] = chr(ord(chr(temp)))
                 elif val < 97:
-                    temp = 97 + (122 - val)
+                    temp = 123 - (97 - val)
                     ls[it] = chr(ord(chr(temp)))
                 else:
                     ls[it] = chr(ord(ls[it]) + k)
