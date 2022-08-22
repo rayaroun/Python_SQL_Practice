@@ -106,7 +106,33 @@
 # print(chr(ord(a)+k))
 
 
-x = 99
+# x = 99
+# cum_shifts = list(map(lambda x : x[0] == "1" , s))
 
 
-print(chr(ord(chr(x))))
+# print(chr(ord(chr(x))))
+
+s = ["1001", "1101", "0011", "1001"]
+s = list(filter(lambda x : x[0] == "1" , s))
+print(s)
+
+# ls = [1,2,3,4,5,6]
+
+# ln = ls
+
+# copy_list = ls.copy()
+
+# ln.remove(3)
+
+# copy_list.remove(1)
+
+
+
+# x = [1, 0, 1, 1, 1, 0, 1]
+
+# print( [ [i, x.count(i)] for i in set(x) ] )
+
+
+# x = { 1: 55, 0 : 45}
+
+# print( max(x, key=x.get) )
