@@ -67,62 +67,65 @@ Lines = file1.readlines()
 nl = [ l[:-1] for l in Lines]
 
 
-oxygen_list = nl.copy()
+oxygen_list, carbon_rating = nl.copy(), nl.copy()
 
 len_oxygen = len(oxygen_list)
 
-oxygen_count = defaultdict(list)
+oxygen_count = defaultdict(dict)
 
-while len_oxygen != 1:
+for i in range(0,len(nl[0])):
 
-    for i in range(0,len(nl[0])):
+    tl = list(map(lambda x : x[i] , oxygen_list))
 
-        tl = list(map(lambda x : x[i] , oxygen_list))
-        oxygen_count[i].update(Counter(tl))
+    max_bit = None
 
+    # print(f' key is {i}')
+
+    # print(set(Counter(tl).items()))
+
+    if len(set(Counter(tl).values())) != 1:
+        max_bit = max(Counter(tl), key=Counter(tl).get)
+    else:
+        max_bit = 1
+
+    # print(max_bit)
+
+    oxygen_list = list(filter(lambda x : x[i] == str(max_bit) , oxygen_list))
+
+    # print(f'oxygen list {oxygen_list} ')
+    # len_oxygen = len(oxygen_list)
+
+    if len(oxygen_list) == 1:
+        break
     
-    for key,value in oxygen_count.items():
-
-        
-
-        if len(set(c.values())) != 1:
-            max_bit = max(c, key=c.get)
-        else:
-            max_bit = 1
-
-        oxygen_list = list(filter(lambda x : x[key] == str(max_bit) , oxygen_list))
-
-
-    len_oxygen = len(oxygen_list)
-
 
 print(oxygen_list)
+print(int(oxygen_list[0],2))
 
-        # temp_max = [ [i, value[0].count(i)] for i in set(value[0]) ]
+for i in range(0,len(nl[0])):
 
-        # max_var : chr
-        # max_val : int
+    tl = list(map(lambda x : x[i] , carbon_rating))
 
-        # for tm in temp_max:
-            
-        #     if tm[1] > max_val:
-        #         max_var = tm[0]
-        #         max_val = tm[1]
+    min_bit = None
 
-        
+    # print(f' key is {i}')
 
-    
+    # print(set(Counter(tl).items()))
 
+    if len(set(Counter(tl).values())) != 1:
+        min_bit = min(Counter(tl), key=Counter(tl).get)
+    else:
+        min_bit = 0
 
-        # res_dic[key] = max(set(value[0]), key=value[0].count)
-        # res_gamma += str(res_dic[key])
+    # print(max_bit)
 
+    carbon_rating = list(filter(lambda x : x[i] == str(min_bit) , carbon_rating))
 
+    # print(f'oxygen list {oxygen_list} ')
+    # len_oxygen = len(oxygen_list)
 
+    if len(carbon_rating) == 1:
+        break
 
-
-
-
-
-
-
+print(carbon_rating)
+print(int(carbon_rating[0],2))
